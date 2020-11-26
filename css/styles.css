@@ -17,10 +17,11 @@ body {
 p {
     padding: 0 1em;
     line-height: 1.5em;
+    margin-bottom: 15px;
 }
 
 a {
-    font-size: 0.85em;
+    font-size: 1em;
     font-weight: 700;
     color: #575757;
     text-decoration: none;
@@ -44,8 +45,9 @@ img {
 ul li {
     list-style-type: none;
     list-style-position: inside;
-
+    padding-left: 0;
 }
+
 
 /* ================================= 
   Base Layout Styles
@@ -55,16 +57,14 @@ ul li {
 
 .name {
     text-align: center;
-    margin: 0;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .main-nav {
   padding: 0 1em;
 }
 
-.main-nav a {
+.main-nav li {
     font-size: 0.85em;
     text-align: center;
     display: block;
@@ -74,25 +74,46 @@ ul li {
     margin: 6px 0;
 }
 
+/* ---- Bottom nav ---- */
+
+.name-footer {
+    font-size: 0.8em;
+    font-weight: 700;
+    float: left;
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+
+.top {
+    font-size: 0.8em;
+    float: right;
+    display: inline-block;
+    margin-top: 10px;    
+}
+
+.bottom-nav {
+    border-top: 1px solid lightgrey;
+    margin: 2.5em 1em 1em;
+}
+
+.footer-nav {
+    display: none;
+}
+
 /* ---- Layout Containers ---- */
 
 main {
     background-color: #fff;
-    padding: 20px 0;
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .project {
     padding: 0 1em;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     margin-top: 10px;
 }
 
-.main-footer {
-    padding: 1em 1em;
-	margin-top: 50px;
-}
 /* ---- Page Elements ---- */
 
 .img-profile {
@@ -108,36 +129,157 @@ main {
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    margin-top: 0;
 }
 
 .headline {
     padding-top: 10px;
 }
+
 .description {
     padding: 0;
 }
 
-.name-footer {
+.skills {
+    background-color: #DFF3F6;
+    padding-bottom: 15px;
+}
+
+.skills-list {
+    padding: 0;
+}
+.skills-list li {
+    display:inline-block;
+    background-color: rgb(5, 161, 161);
+    font-size: 0.85em;
+    padding: 6px 10px;
+    margin: 3px 3px 8px;
+    color: #fff;
+    border: 1px solid rgb(5, 161, 161);
+    border-radius: 5px;
+}
+.bio {
+    width: 100%;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+      
+@media (min-width: 768px) {
+
+    .name {
+        margin: 1em;
+        padding-top: 5px;
+    }
     
-    float: left;
-    font-size: 0.8em;
-    font-weight: 700;
-}
+    .main-nav li {
+        display: inline-block;
+        text-align: center;
+        background-color: transparent;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+    .profile {
+        padding: 0 1em;
+        margin: 0 auto;
 
-.back-to-top {
-    float: right;
-    font-size: 0.8em;
-    display: inline-block;
-    margin-top: 15px;
-    padding-right:5px;
-}
+    }
+    .img-profile {
+        width: 40%;
+        float: right;
+        padding-right: 1em;
 
-/* ---- Float clearfix ---- */
+    }
+    .bio {
+        float:left;
+        width: 60%;
+        font-size: 1.2em;
+        text-align: left;
+    }
+    .portfolio {
+        margin: 0 auto;
+        padding: 0 1em;
+    }
+    .project {
+        width: 50%;
+        float: left;
+    }
+
+    .skills {
+        margin-bottom: 0;
+    }
+    .contact {
+        padding: 0 1em;
+    }
+    footer {
+        padding: 0 1em;
+        margin: 0 auto;
+    }
+    .name-footer{
+        font-size: 0.9em;
+        margin-top: 25px;
+    }
+    .footer-nav {
+        float: right;
+        display: inline-block;
+        margin-top: 20px;    
+    }
+   
+    .footer-nav li {
+        display: inline-block;
+        font-size: 0.9em;
+        font-weight: 700;
+        margin-top: 0;
+        padding: 0 10px;
+    }
+    .footer-nav li:last-child {
+        padding-right: 0;
+    }
+    .top {
+        display: none;
+    }
+
+
+    /* ---- Float clearfix ---- */
 
 	.clearfix::after {
 		content: " ";
 		display: table;
 		clear: both;
-	}
+    }
+}
+
+@media (min-width: 1024px){
+
+    .container{
+        max-width: 1150px;
+        margin: auto;
+    }
+    .name {
+        float: left;
+        padding-left: 10px;
+    }
+    .profile {
+    max-width: 1150px;
+    }
+
+    .main-nav {
+        float: right;
+    }
+    .portfolio {
+        max-width: 1150px;
+    }
+
+    .project {
+        width: 33%;
+    }
+
+    footer {
+        max-width: 1150px;
+    }
+
+}
+
